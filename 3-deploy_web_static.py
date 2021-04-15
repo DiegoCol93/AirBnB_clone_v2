@@ -5,9 +5,11 @@ from os.path import exists
 
 env.hosts = ['ubuntu@34.75.21.202', 'ubuntu@35.185.122.161']
 
+
 def deploy():
     """ Method for deploying using the previous fabric methods. """
     return(do_deploy(do_pack()))
+
 
 def do_deploy(archive_path):
     """ Deploys the content of the web_static file to my web servers. """
@@ -30,6 +32,7 @@ def do_deploy(archive_path):
         return (True)
     except Exception as e:
         return (False)
+
 
 def do_pack():
     """ Packs the contents of the /web_static directory in .tgz """
