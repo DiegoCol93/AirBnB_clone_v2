@@ -7,6 +7,7 @@ env.hosts = ['ubuntu@34.75.21.202', 'ubuntu@35.185.122.161']
 
 
 def do_deploy(archive_path):
+    """ Deploys the content of the web_static file to my web servers. """
 
     if archive_path is None or exists(archive_path) is False:
         return(False)
