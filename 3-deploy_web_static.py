@@ -6,4 +6,4 @@ do_deploy = __import__('2-do_deploy_web_static').do_deploy
 
 def deploy():
     """ Method for deploying using the previous fabric methods. """
-    return(do_deploy("version/{}".format(do_pack().split("/")[-1])))
+    return(do_deploy("versions/{}".format(do_pack().split("/")[-1])))
