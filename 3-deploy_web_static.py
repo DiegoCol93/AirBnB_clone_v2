@@ -2,6 +2,7 @@
 """ Module for storing the deploy method for fabric. """
 from fabric.api import put, run, env
 from os.path import exists
+
 env.hosts = ['ubuntu@34.75.21.202', 'ubuntu@35.185.122.161']
 
 def deploy():
@@ -41,7 +42,6 @@ def do_pack():
 
     time = datetime.now().strftime("%Y%m%d%H%M%S")
     file_name = "versions/web_static_{}.tgz".format(time)
-    cwd = getcwd()
     try:
         local("tar -cvzf {} web_static".format(file_name))
         return(file_name)
