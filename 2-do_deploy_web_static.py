@@ -23,7 +23,7 @@ def do_deploy(archive_path):
         run("rm -rf /data/web_static/releases/{}/web_static")
         run("rm -rf /data/web_static/current")
         run("ln -s /data/web_static/releases/{} /data/web_static/current"
-            .format(archive_name, archive_name))
+            .format(archive_name))
         return (True)
     except Exception as e:
         return (False)
