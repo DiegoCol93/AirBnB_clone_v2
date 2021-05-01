@@ -14,7 +14,7 @@ def hello_HBNB():
     return ("Hello HBNB!")
 
 
-@app.route('/hbnb')
+@app.route('/hbnb/')
 def hello_HBNB():
     """ Returns the content at Flask's route /hbnb."""
     return ("HBNB")
