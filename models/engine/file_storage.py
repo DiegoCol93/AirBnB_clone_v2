@@ -66,6 +66,6 @@ class FileStorage:
             except:
                 pass
 
-    def close (self):
+    def close(self):
         """ Deserializes the JSON file into objects. """
         self.reload()
