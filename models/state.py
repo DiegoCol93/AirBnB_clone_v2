@@ -23,7 +23,6 @@ class State(BaseModel, Base):
         def cities(self):
             """returns the list of City instances with state_id"""
             objDict = models.storage.all(City)
-            print(objDict)
             citiesList = []
             for key, value in objDict.items():
                 if value.state_id == self.id:
