@@ -65,3 +65,7 @@ class FileStorage:
                 self.__objects.pop(objDict)
             except:
                 pass
+
+    def close (self):
+        """ Deserializes the JSON file into objects. """
+        self.reload()

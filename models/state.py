@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ State Module for HBNB project """
 from models.base_model import BaseModel, Base
-from models.engine.file_storage import FileStorage
+from models.city import City
+import models
+# from models.engine.file_storage import FileStorage
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship, backref
 from os import getenv as env
@@ -20,9 +22,10 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """returns the list of City instances with state_id"""
-            objDict = FileStorage.all()
+            objDict = models.storage.all(City)
+            print(objDict)
             citiesList = []
-            for key, value in objDict:
+            for key, value in objDict.items():
                 if value.state_id == self.id:
                     citiesList.append(value)
             return (citiesList)
